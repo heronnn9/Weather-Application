@@ -3,8 +3,8 @@ import React from "react";
 import Input from "@/Components/Input";
 import { useState, useEffect } from "react";
 import Current from "@/Components/Current";
-import WeatherDetails from "@/Components/WeatherDetails";
 import WeekForecast from "@/Components/WeekForecast";
+
 const Home = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
@@ -48,19 +48,16 @@ const Home = () => {
   } else {
     content = (
       <>
-        <div>
+        <div className="flex md:flex-row flex-col p-12 items-center justify-between">
           <Current data={data} />
-          <WeekForecast />
-        </div>
-        <div>
-          <WeatherDetails />
+          <WeekForecast data={data} />
         </div>
       </>
     );
   }
 
   return (
-    <div className=" bg-cover bg-gradient-to-r from-blue-500 to-blue-300 h-screen">
+    <div className=" bg-cover bg-gradient-to-r from-blue-500 to-blue-300 h-screen ">
       <div className=" bg-white/25 w-full flex flex-col h-fit">
         {/* Input and Logo */}
         <div className="flex flex-col justify-between items-center md:flex-row p-12">
